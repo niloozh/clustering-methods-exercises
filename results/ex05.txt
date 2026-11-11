@@ -1,0 +1,17 @@
+=== Tasks 1–3 (figure-based) ===
+See answers.md for shared-point / Jaccard / CI calculations from ex5.pdf figures.
+
+=== Task 4: outlier methods on a tiny 2-d toy (5 inliers + far points) ===
+KDIST k=2: [0.224 0.224 0.224 7.071 7.072 7.864 7.072 7.824]
+ODIN  k=2: [0. 0. 0. 2. 1. 2. 1. 2.]
+Mean-shift scores: [0.071 0.112 0.071 3.43  1.414 3.905 1.414 3.905]
+Medoid-shift: similar to mean-shift but moves to the medoid of the k-NN set; far points still receive large drift scores.
+
+=== Task 5: choosing an outlier threshold ===
+Idea: sort scores descending; look for the largest gap (elbow) between consecutive scores; or fit a two-component model (inlier vs outlier) on the 1-d scores; or use OTST / knee detection. The gap between ~19 and ~59 in the figure is exactly such an elbow.
+
+=== Bonus: CI on S1 k-means vs a second run (proxy GT) ===
+CI between two k-means runs = 4 (0 means matching centroids)
+
+=== Bonus: mean-shift outlier filtering before centroid update ===
+Subsample N=500; 95th percentile score thr=43715.4452; flagged=25 points

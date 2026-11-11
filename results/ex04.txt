@@ -1,0 +1,56 @@
+=== Task 1: SSE vs pairwise ===
+Cluster SSE = 11.984389
+Sum pairwise squared distances = 95.875112
+n * SSE = 95.875112  (should match pairwise sum)
+
+=== Task 4: pairwise edit distances ===
+Cluster A:
+  d(ireadL,relanE) = 4
+  d(ireadL,rlanZd) = 5
+  d(ireadL,irelLITnd) = 6
+  d(relanE,rlanZd) = 3
+  d(relanE,irelLITnd) = 5
+  d(rlanZd,irelLITnd) = 6
+Cluster B:
+  d(fiInVlLand,filanNM) = 6
+  d(fiInVlLand,finPAlaQd) = 5
+  d(fiInVlLand,finlCnUd) = 5
+  d(filanNM,finPAlaQd) = 6
+  d(filanNM,finlCnUd) = 4
+  d(finPAlaQd,finlCnUd) = 5
+
+=== Task 5: medoids ===
+Cluster A: medoid=relanE (index 1), cost=12.0
+Cluster B: medoid=finlCnUd (index 3), cost=14.0
+Better non-medoid representative? A consensus / Steiner string can beat the medoid, but it may not equal any data object (medoid constraint).
+
+=== Bonus Task 6: CentroidDistance on S2 k-means ===
+k-means SSE=2.71698e+13
+Pairwise CentroidDistance (Ward-style n_i n_j/(n_i+n_j) ||ci-cj||^2):
+  (1,2): ward=3.58e+13, n1*n2*d2=1.568e+16
+  (1,3): ward=9.452e+12, n1*n2*d2=4.357e+15
+  (2,3): ward=8.403e+13, n1*n2*d2=5.823e+16
+  (2,4): ward=1.263e+13, n1*n2*d2=8.399e+15
+  (3,4): ward=5.626e+13, n1*n2*d2=3.871e+16
+  (3,5): ward=4.135e+13, n1*n2*d2=3.023e+16
+  (4,5): ward=4.945e+13, n1*n2*d2=3.477e+16
+  (4,6): ward=2.403e+13, n1*n2*d2=1.631e+16
+  (5,6): ward=1.133e+13, n1*n2*d2=8.183e+15
+  (5,7): ward=1.917e+13, n1*n2*d2=1.237e+16
+  (6,7): ward=5.085e+13, n1*n2*d2=3.158e+16
+  (6,8): ward=8.108e+12, n1*n2*d2=5.643e+15
+  (7,8): ward=4.076e+13, n1*n2*d2=2.523e+16
+  (7,9): ward=4.104e+12, n1*n2*d2=2.077e+15
+  (8,9): ward=3.64e+13, n1*n2*d2=2.115e+16
+  (8,10): ward=8.677e+12, n1*n2*d2=8.053e+15
+  (9,10): ward=2.728e+13, n1*n2*d2=2.223e+16
+  (9,11): ward=1.953e+13, n1*n2*d2=1.045e+16
+  (10,11): ward=4.156e+13, n1*n2*d2=3.665e+16
+  (10,12): ward=6.199e+13, n1*n2*d2=5.716e+16
+  (11,12): ward=4.299e+12, n1*n2*d2=2.76e+15
+  (11,13): ward=3.529e+13, n1*n2*d2=2.237e+16
+  (12,13): ward=6.063e+13, n1*n2*d2=4.086e+16
+  (12,14): ward=2.506e+13, n1*n2*d2=1.05e+16
+  (13,14): ward=4.664e+12, n1*n2*d2=1.917e+15
+  (13,15): ward=3.594e+13, n1*n2*d2=3.587e+16
+  (14,15): ward=3.172e+13, n1*n2*d2=2.357e+16

@@ -1,0 +1,5 @@
+Loaded data/s1.txt: N=5000, D=2
+Wrote ex01/output/centroid.txt and ex01/output/partition.txt
+Example Euclidean distance(data[0], data[1]) = 7218.6534
+SSE vs randomly chosen centroids = 1.224e+15
+Average pairwise distance on 400 subsampled points = 429039.6780

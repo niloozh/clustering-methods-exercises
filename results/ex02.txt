@@ -1,0 +1,34 @@
+Loaded data/a1.txt: N=3000, D=2
+Task1 optimal partition SSE for random centroids = 7.20722e+10
+Task1 NN of data[0] among centroids → index 13, d^2=4.53e+05
+Task2 k-means SSE = 1.91267e+10 after 21 iters
+Wrote activity table → ex02/output/activity.csv
+Activity (first/last): {'iteration': 1, 'sse': 29661729295.316486, 'active': 20, 'active_pct': 100.0} ... {'iteration': 21, 'sse': 19126699930.472305, 'active': 0, 'active_pct': 0.0}
+
+--- Task 4: MPS demo ---
+MPS demo query (midpoint 4 & 10) = [2.25 2.  ]
+Projection axis = x. Process points 1..10:
+Projection order by x: [1, 2, 5, 3, 4, 6, 9, 7, 10, 8]
+  point 1: evaluate d^2=6.062 (was best inf)
+  point 2: evaluate d^2=6.062 (was best 6.062)
+  point 3: evaluate d^2=2.562 (was best 6.062)
+  point 4: evaluate d^2=1.562 (was best 2.562)
+  point 5: prune (dx^2=3.062 >= best=1.562)
+  point 6: evaluate d^2=0.312 (was best 1.562)
+  point 7: prune (dx^2=0.562 >= best=0.312)
+  point 8: prune (dx^2=3.062 >= best=0.312)
+  point 9: evaluate d^2=0.312 (was best 0.312)
+  point 10: prune (dx^2=1.562 >= best=0.312)
+Nearest neighbour = point 6, d^2=0.312
+
+--- Task 5: RS time budget ---
+{'k': 20, 'km_iters': 25, 'alpha': 4.0, 'local_iters': 2, 't_km_units': 500, 't_swap_units': 44.0, 'n_swaps': 11.363636363636363}
+With α=4, k=20: about 11.36 trial swaps fit in the time of 25 k-means iterations.
+Formula 25k/(4+2k) with k=20 = 11.3636
+For the symbolic answer with general k: 25k/(α+2k); α=4 → 25k/(4+2k)
+
+--- Bonus Task 6: 100 random swaps ---
+SSE before swaps = 1.9515e+10
+Best SSE after 100 trials = 1.21463e+10
+Trials that improved the running best = 14/100
+Early swaps can escape a bad local minimum; later most random swaps are worse and get rejected.

@@ -1,0 +1,11 @@
+Loaded data/s1.txt: N=5000
+k-means 25 iters: SSE=8.91765e+12, time=1.367s
+Avg RS trial time ≈ 0.2173s → ~6.3 trials in one k-means budget
+Random Swap (50 trials): SSE=8.91765e+12, improvements=11
+
+Mumford-Shah (100x100 with 10x10 black square): {'width': 100, 'height': 100, 'perimeter': 40, 'area_fg': 100, 'area_bg': 9900, 'variance_term': 0.0, 'MS_cost_lambda1': 40.0, 'note': 'variance=0 for both segments, so MS cost ≈ λ * perimeter (=40 if λ=1)'}
+
+MIW (mean of internal weights [7, 8, 6, 3, 5, 7]) = 6.0000
+Cut edges (red) = [6, 6]. Improving MIW: move a boundary vertex if it increases mean internal weight.
+
+Task 5: standard k-means needs vector features + Euclidean SSE. On a pure similarity/graph example without coordinates, plain k-means does not apply unless we embed nodes (e.g. spectral embedding) or switch to a graph objective.

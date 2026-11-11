@@ -1,0 +1,22 @@
+=== Task 1: divisive clustering on S1–S4 ===
+s1.txt: SSE=8.91765e+12, time=3.52s (wall 3.55s)
+s2.txt: SSE=1.32792e+13, time=4.80s (wall 4.80s)
+s3.txt: SSE=1.68902e+13, time=4.68s (wall 4.68s)
+s4.txt: SSE=1.57036e+13, time=4.91s (wall 4.91s)
+
+=== Task 2: toy divisive walk-through ===
+Start: 1 cluster = all points {1..10}, centroid = mean.
+  c0 = [1.75 1.65]
+Split cluster with largest SSE using 2-means; repeat until desired k.
+Illustrative first split often separates left group {1..5} from right {6..10}.
+  left mean=[0.5 1.9], right mean=[3.  1.4]
+Continue splitting the child with larger SSE, etc.
+
+=== Task 3: multi-parent crossover demo ===
+Pooled 30 centroids → selected 15
+
+=== Task 4: unbalance dataset ===
+Unbalance has a few huge dense clusters and several tiny ones. Maximin crossover from two parents can still under-represent tiny clusters if neither parent placed a centroid there. It *can* work if the pooled set covers both large and small modes; otherwise the child inherits the blind spot.
+
+=== Task 5: outlier detection inside GA crossover ===
+Yes — treat parent centroids as a point set and score them (e.g. KDIST / mean-shift). High-score 'outlier centroids' often sit in empty space (useless prototypes) and can be discarded before maximin selection; low-score centroids sit in dense modes and are preferred. Caution: a legitimate centroid of a small/rare cluster can look like an outlier — protect low-SSE / high-mass centroids from removal.

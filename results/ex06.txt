@@ -1,0 +1,37 @@
+Loaded data/s1.txt: N=5000
+k= 1  SSE=5.76807e+14
+k= 2  SSE=3.44948e+14
+k= 3  SSE=2.13509e+14
+k= 4  SSE=1.38251e+14
+k= 5  SSE=1.16005e+14
+k= 6  SSE=8.23475e+13
+k= 7  SSE=6.35769e+13
+k= 8  SSE=4.81469e+13
+k= 9  SSE=5.19291e+13
+k=10  SSE=3.55263e+13
+k=11  SSE=2.91767e+13
+k=12  SSE=2.39831e+13
+k=13  SSE=1.9172e+13
+k=14  SSE=1.93065e+13
+k=15  SSE=1.64515e+13
+k=16  SSE=1.33118e+13
+k=17  SSE=1.27541e+13
+k=18  SSE=8.27242e+12
+k=19  SSE=8.08086e+12
+k=20  SSE=7.9531e+12
+Heuristic knee near k≈2 (from argmax second derivative)
+True k for S1 = 15
+
+=== Task 3: sub-sampling ===
+Full data SSE=1.4354e+13
+frac≈0.20 (N=1000): SSE(k)=3.94307e+12, SSE(k+1)=2.60329e+12
+frac≈0.10 (N=500): SSE(k)=2.49443e+12, SSE(k+1)=1.40338e+12
+frac≈0.05 (N=250): SSE(k)=5.2377e+11, SSE(k+1)=8.85037e+11
+frac≈0.02 (N=100): SSE(k)=3.29618e+11, SSE(k+1)=2.98091e+11
+
+=== Tasks 4–5: grid init ===
+Cells per attribute=100 → total cells = 100^2 = 10000
+For D=10: 100^10 = 1e20 (impossible to materialise). For D=100: hopeless.
+Choose cells_per_dim so that expected occupied cells ≈ O(k)..O(N).
+k-means random init SSE = 1.4354e+13
+k-means grid init   SSE = 8.91765e+12
